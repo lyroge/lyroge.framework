@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lyroge.framework", "lyroge.framework\lyroge.framework.csproj", "{1D36085D-1908-493C-99E4-386203162718}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lyroge.framework.test", "lyroge.framework.test\lyroge.framework.test.csproj", "{3C73D860-12EE-41B7-AE60-3B8B2D32E4CD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2982BA5B-E798-47C4-B8D4-194AF70F8BDA}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		lyroge.framework.vsmdi = lyroge.framework.vsmdi
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = lyroge.framework.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D36085D-1908-493C-99E4-386203162718}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D36085D-1908-493C-99E4-386203162718}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D36085D-1908-493C-99E4-386203162718}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{1D36085D-1908-493C-99E4-386203162718}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{1D36085D-1908-493C-99E4-386203162718}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1D36085D-1908-493C-99E4-386203162718}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D36085D-1908-493C-99E4-386203162718}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D36085D-1908-493C-99E4-386203162718}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{1D36085D-1908-493C-99E4-386203162718}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{1D36085D-1908-493C-99E4-386203162718}.Release|x86.ActiveCfg = Release|Any CPU
+		{3C73D860-12EE-41B7-AE60-3B8B2D32E4CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C73D860-12EE-41B7-AE60-3B8B2D32E4CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C73D860-12EE-41B7-AE60-3B8B2D32E4CD}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{3C73D860-12EE-41B7-AE60-3B8B2D32E4CD}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3C73D860-12EE-41B7-AE60-3B8B2D32E4CD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3C73D860-12EE-41B7-AE60-3B8B2D32E4CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C73D860-12EE-41B7-AE60-3B8B2D32E4CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C73D860-12EE-41B7-AE60-3B8B2D32E4CD}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{3C73D860-12EE-41B7-AE60-3B8B2D32E4CD}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{3C73D860-12EE-41B7-AE60-3B8B2D32E4CD}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
