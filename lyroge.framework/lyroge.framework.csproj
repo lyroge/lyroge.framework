@@ -50,6 +50,7 @@
     <Compile Include="DbHelper\SQLBuilder\SQLBuilder.cs" />
     <Compile Include="DbHelper\SqlDbUtil.cs" />
     <Compile Include="LinqExtension\Linq.cs" />
+    <Compile Include="ObjectExtension\ObjectExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
