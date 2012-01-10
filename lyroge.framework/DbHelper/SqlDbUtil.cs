@@ -18,7 +18,7 @@ namespace lyroge.framework.DbHelper
         /// <param name="connStringName"></param>
         public SqlDbUtil(string connStringName)
         {
-            if (String.IsNullOrEmpty(ConfigurationManager.ConnectionStrings[connStringName].ToString()) == false)
+            if (ConfigurationManager.ConnectionStrings[connStringName] != null)
                 Connectstring = ConfigurationManager.ConnectionStrings[connStringName].ToString();
             else
                 Connectstring = ConfigurationManager.AppSettings[connStringName];
@@ -88,6 +88,13 @@ namespace lyroge.framework.DbHelper
             Adap.SelectCommand = Comm;
         }
 
+        protected override void PrepareCommand(DbCommand dbCommand)
+        {
+            DbParameter[] dbParams = new DbParameter[dbCommand.Parameters.Count];
+            dbCommand.Parameters.CopyTo(dbParams, 0);
+            PrepareCommand(dbCommand.CommandText, dbParams);
+        }
+
         /// <summary>
         /// 返回插入
         /// </summary>
@@ -97,8 +104,40 @@ namespace lyroge.framework.DbHelper
         public int ExecuteInsert(string commandText, params DbParameter[] dbParameters)
         {
             PrepareCommand(commandText, dbParameters);
-            object obj = ExecuteScalar(commandText + ";select @@IDENTITY");
-            Conn.Close();
+            object obj = null;
+            try
+            {
+                obj = ExecuteScalar(commandText + ";select @@IDENTITY");
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }   
+            finally
+            {
+                Conn.Close();
+            }
+            if (obj != null)
+                return System.Convert.ToInt32(obj);
+            return -1;
+        }
+
+        public int ExecuteInsert(DbCommand dbCommand)
+        {
+            PrepareCommand(dbCommand);
+            object obj = null;
+            try
+            {
+                obj = ExecuteScalar(dbCommand.CommandText + ";select @@IDENTITY");
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                Conn.Close();
+            }
             if (obj != null)
                 return System.Convert.ToInt32(obj);
             return -1;

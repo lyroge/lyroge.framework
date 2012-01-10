@@ -18,7 +18,7 @@ namespace lyroge.framework.DbHelper
         /// <param name="connStringName"></param>
         public OleDbUtil(string connStringName)
         {
-            if (String.IsNullOrEmpty(ConfigurationManager.ConnectionStrings[connStringName].ToString()) == false)
+            if (ConfigurationManager.ConnectionStrings[connStringName] != null)
                 Connectstring = ConfigurationManager.ConnectionStrings[connStringName].ToString();
             else
                 Connectstring = ConfigurationManager.AppSettings[connStringName];

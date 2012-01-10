@@ -6,6 +6,6 @@ using System.Text;
 namespace lyroge.framework.Cryptography
 {
     class Class1
-    {11
+    {
     }
 }

@@ -47,7 +47,9 @@
     <Compile Include="DbHelper\IDbHelper\IDbHelper.cs" />
     <Compile Include="DbHelper\DBUtil.cs" />
     <Compile Include="DbHelper\OleDbUtil.cs" />
+    <Compile Include="DbHelper\SQLBuilder\SQLBuilder.cs" />
     <Compile Include="DbHelper\SqlDbUtil.cs" />
+    <Compile Include="LinqExtension\Linq.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

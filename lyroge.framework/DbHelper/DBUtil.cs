@@ -1,4 +1,20 @@
-﻿using System;
+﻿#region 条件编译实例
+//#define DEBUG
+//#if DEBUG
+//            Adap.Fill(ds);
+//            Conn.Close();
+//#else
+//            try
+//            {
+//                Adap.Fill(ds);
+//            }
+//            finally{
+//                Conn.Close();
+//            }
+//#endif
+#endregion
+
+using System;
 using System.Linq;
 using System.Data;
 using System.Data.Common;
@@ -7,7 +23,7 @@ using System.Data.OleDb;
 using lyroge.framework.DbHelper.Interfaces;
 
 namespace lyroge.framework.DbHelper
-{
+{    
     public class DBUtil : IDbHelper, IDisposable
     {
         #region 属性
@@ -49,6 +65,13 @@ namespace lyroge.framework.DbHelper
             Adap.SelectCommand = Comm;
         }
 
+        protected virtual void PrepareCommand(DbCommand dbCommand)
+        {
+            DbParameter[] dbParams = new DbParameter[dbCommand.Parameters.Count];
+            dbCommand.Parameters.CopyTo(dbParams, 0);
+            PrepareCommand(dbCommand.CommandText, dbParams);
+        }
+
         /// <summary>
         /// 如果连接没有打开那么就打开连接
         /// </summary>
@@ -80,6 +103,11 @@ namespace lyroge.framework.DbHelper
             return GetDataSet(commandText, dbParameters).Tables[0];
         }
 
+        public DataTable GetDataTable(DbCommand dbCommand)
+        {
+            return GetDataSet(dbCommand).Tables[0];
+        }
+
         /// <summary>
         /// 获取DataSet类型的查询结果
         /// </summary>
@@ -90,8 +118,37 @@ namespace lyroge.framework.DbHelper
         {
             PrepareCommand(commandText, dbParameters);
             DataSet ds = new DataSet();
-            Adap.Fill(ds);
-            Conn.Close();
+
+            try
+            {
+                Adap.Fill(ds);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally{
+                Conn.Close();
+            }
+            return ds;
+        }
+
+        public DataSet GetDataSet(DbCommand dbCommand)
+        {
+            PrepareCommand(dbCommand);
+            DataSet ds = new DataSet();
+            try
+            {
+                Adap.Fill(ds);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                Conn.Close();
+            }
             return ds;
         }
 
@@ -107,6 +164,12 @@ namespace lyroge.framework.DbHelper
             return Comm.ExecuteReader(CommandBehavior.CloseConnection);
         }
 
+        public IDataReader GetDataReader(DbCommand dbCommand)
+        {
+            PrepareCommand(dbCommand);
+            return Comm.ExecuteReader(CommandBehavior.CloseConnection);
+        }
+
         /// <summary>
         /// 判断是否查询到数据
         /// </summary>
@@ -116,10 +179,44 @@ namespace lyroge.framework.DbHelper
         public bool IsExists(string commandText, params DbParameter[] dbParameters)
         {
             PrepareCommand(commandText, dbParameters);
-            IDataReader reader = Comm.ExecuteReader();
-            bool b = reader.Read();
-            reader.Close();
-            Conn.Close();
+            IDataReader reader = null;
+            bool b = false;
+            try
+            {
+                reader = Comm.ExecuteReader();
+                b = reader.Read();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                reader.Close();
+                Conn.Close();                
+            }
+            return b;
+        }
+
+        public bool IsExists(DbCommand dbCommand)
+        {
+            PrepareCommand(dbCommand);
+            IDataReader reader = null;
+            bool b = false;
+            try
+            {
+                reader = Comm.ExecuteReader();
+                b = reader.Read();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                reader.Close();
+                Conn.Close();
+            }
             return b;
         }
 
@@ -129,11 +226,41 @@ namespace lyroge.framework.DbHelper
         /// <param name="commandText"></param>
         /// <param name="dbParameters"></param>
         /// <returns></returns>
+        public int ExecuteNonQuery(DbCommand dbCommand)
+        {
+            PrepareCommand(dbCommand);
+            var i = 0;            
+            try
+            {
+                i = Comm.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {                
+                Conn.Close();
+            }            
+            return i;
+        }
+
         public int ExecuteNonQuery(string commandText, params DbParameter[] dbParameters)
         {
             PrepareCommand(commandText, dbParameters);
-            var i = Comm.ExecuteNonQuery();
-            Conn.Close();
+            var i = 0;
+            try
+            {
+                i = Comm.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                Conn.Close();
+            }
             return i;
         }
 
@@ -146,8 +273,38 @@ namespace lyroge.framework.DbHelper
         public object ExecuteScalar(string commandText, params DbParameter[] dbParameters)
         {
             PrepareCommand(commandText, dbParameters);
-            object obj = Comm.ExecuteScalar();
-            Conn.Close();
+            object obj = null;
+            try
+            {
+                obj = Comm.ExecuteScalar();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                Conn.Close();
+            }
+            return obj;
+        }
+
+        public object ExecuteScalar(DbCommand dbCommand)
+        {
+            PrepareCommand(dbCommand);
+            object obj = null;
+            try
+            {
+                obj = Comm.ExecuteScalar();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                Conn.Close();
+            }
             return obj;
         }
 
