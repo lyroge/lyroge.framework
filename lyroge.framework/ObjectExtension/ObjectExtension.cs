@@ -37,11 +37,5 @@ namespace lyroge.framework.ObjectExtension
                 action1();
         }
         #endregion
-
-        //public static TResult IfNull<TResult>(this object obj, Func<TResult> func)
-        //{
-        //    if (obj == null)
-        //        return func();
-        //}
     }
 }
