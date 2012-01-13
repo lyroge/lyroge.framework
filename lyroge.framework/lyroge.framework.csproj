@@ -34,6 +34,7 @@
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,7 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cryptography\Class1.cs" />
     <Compile Include="Cryptography\SymmetricAlgorithm\DES.cs" />
     <Compile Include="Cryptography\HashAlgorithm\MD5.cs" />
     <Compile Include="DbHelper\IDbHelper\IDbHelper.cs" />
@@ -49,8 +49,10 @@
     <Compile Include="DbHelper\OleDbUtil.cs" />
     <Compile Include="DbHelper\SQLBuilder\SQLBuilder.cs" />
     <Compile Include="DbHelper\SqlDbUtil.cs" />
+    <Compile Include="HttpWeb\RequestHelper\RequestHelper.cs" />
     <Compile Include="LinqExtension\Linq.cs" />
     <Compile Include="ObjectExtension\ObjectExtension.cs" />
+    <Compile Include="ObjectExtension\Serialize\Serialize.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
