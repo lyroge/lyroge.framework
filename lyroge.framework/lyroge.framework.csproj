@@ -34,6 +34,7 @@
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -49,11 +50,16 @@
     <Compile Include="DbHelper\OleDbUtil.cs" />
     <Compile Include="DbHelper\SQLBuilder\SQLBuilder.cs" />
     <Compile Include="DbHelper\SqlDbUtil.cs" />
+    <Compile Include="HttpWeb\Extensions\Page.cs" />
     <Compile Include="HttpWeb\RequestHelper\RequestHelper.cs" />
     <Compile Include="LinqExtension\Linq.cs" />
     <Compile Include="ObjectExtension\ObjectExtension.cs" />
     <Compile Include="ObjectExtension\Serialize\Serialize.cs" />
+    <Compile Include="ObjectExtension\StringValidate\StringValidate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
