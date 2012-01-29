@@ -23,6 +23,12 @@ namespace lyroge.framework.ObjectExtension
                 action();
         }
 
+        public static void IfNotNull(this object obj, Action<object> action)
+        {
+            if (obj != null)
+                action(obj);
+        }
+
         /// <summary>
         /// 对象如果是不空则返回值有func决定
         /// </summary>
