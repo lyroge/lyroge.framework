@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Web.Script.Serialization;
 
 namespace lyroge.framework.ObjectExtension.Serialize
 {
@@ -34,6 +35,29 @@ namespace lyroge.framework.ObjectExtension.Serialize
             {
                 return new BinaryFormatter().Deserialize(stream) as T;
             }
+        }
+
+        /// <summary>
+        /// 将obj对象序列化为json格式的字符串
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public static string ToJson(this object obj)
+        {
+            JavaScriptSerializer JSerializer = new JavaScriptSerializer();
+            return JSerializer.Serialize(obj);
+        }
+
+        /// <summary>
+        /// 将json字符串转换为类型为T的对象
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="json"></param>
+        /// <returns></returns>
+        public static T JsonTo<T>(this string json)
+        {
+            JavaScriptSerializer JSerializer = new JavaScriptSerializer();
+            return JSerializer.Deserialize<T>(json);
         }
     }
 }
