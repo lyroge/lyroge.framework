@@ -46,13 +46,12 @@
   <ItemGroup>
     <Compile Include="Cryptography\SymmetricAlgorithm\DES.cs" />
     <Compile Include="Cryptography\HashAlgorithm\MD5.cs" />
+    <Compile Include="DbHelper\DbHelper.cs" />
     <Compile Include="DbHelper\IDbHelper\IDbHelper.cs" />
-    <Compile Include="DbHelper\DBUtil.cs" />
-    <Compile Include="DbHelper\OleDbUtil.cs" />
+    <Compile Include="DbHelper\OleHelpUtil.cs" />
     <Compile Include="DbHelper\SQLBuilder\SQLBuilder.cs" />
-    <Compile Include="DbHelper\SqlDbUtil.cs" />
-    <Compile Include="HttpWeb\Extensions\Page.cs" />
-    <Compile Include="HttpWeb\RequestHelper\RequestHelper.cs" />
+    <Compile Include="DbHelper\SqlHelper.cs" />
+    <Compile Include="Http\MyWebClient.cs" />
     <Compile Include="LinqExtension\Linq.cs" />
     <Compile Include="ObjectExtension\ObjectExtension.cs" />
     <Compile Include="ObjectExtension\Serialize\Serialize.cs" />
@@ -60,9 +59,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
+    <Folder Include="IO\" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

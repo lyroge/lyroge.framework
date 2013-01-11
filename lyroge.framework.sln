@@ -3,12 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lyroge.framework", "lyroge.framework\lyroge.framework.csproj", "{1D36085D-1908-493C-99E4-386203162718}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2982BA5B-E798-47C4-B8D4-194AF70F8BDA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lyroge.framework.Test", "lyroge.framework.Test\lyroge.framework.Test.csproj", "{FA23CE62-2B57-478C-B8B6-31E099F6B10E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2BC417B9-DA9F-4763-B534-40E30B27A648}"
 	ProjectSection(SolutionItems) = preProject
 		Local.testsettings = Local.testsettings
 		lyroge.framework.vsmdi = lyroge.framework.vsmdi
 		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lyroge.framework.snapcodes", "lyroge.framework.snapcodes\lyroge.framework.snapcodes.csproj", "{68623B86-DA0D-4273-B5CD-7237552CB1C4}"
 EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
@@ -33,6 +37,26 @@ Global
 		{1D36085D-1908-493C-99E4-386203162718}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{1D36085D-1908-493C-99E4-386203162718}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{1D36085D-1908-493C-99E4-386203162718}.Release|x86.ActiveCfg = Release|Any CPU
+		{FA23CE62-2B57-478C-B8B6-31E099F6B10E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA23CE62-2B57-478C-B8B6-31E099F6B10E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA23CE62-2B57-478C-B8B6-31E099F6B10E}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{FA23CE62-2B57-478C-B8B6-31E099F6B10E}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{FA23CE62-2B57-478C-B8B6-31E099F6B10E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FA23CE62-2B57-478C-B8B6-31E099F6B10E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA23CE62-2B57-478C-B8B6-31E099F6B10E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA23CE62-2B57-478C-B8B6-31E099F6B10E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{FA23CE62-2B57-478C-B8B6-31E099F6B10E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{FA23CE62-2B57-478C-B8B6-31E099F6B10E}.Release|x86.ActiveCfg = Release|Any CPU
+		{68623B86-DA0D-4273-B5CD-7237552CB1C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68623B86-DA0D-4273-B5CD-7237552CB1C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68623B86-DA0D-4273-B5CD-7237552CB1C4}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{68623B86-DA0D-4273-B5CD-7237552CB1C4}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{68623B86-DA0D-4273-B5CD-7237552CB1C4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{68623B86-DA0D-4273-B5CD-7237552CB1C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68623B86-DA0D-4273-B5CD-7237552CB1C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68623B86-DA0D-4273-B5CD-7237552CB1C4}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{68623B86-DA0D-4273-B5CD-7237552CB1C4}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{68623B86-DA0D-4273-B5CD-7237552CB1C4}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

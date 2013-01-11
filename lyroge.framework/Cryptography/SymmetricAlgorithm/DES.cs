@@ -1,7 +1,7 @@
 using System;
-using System.Text;
 using System.IO;
 using System.Security.Cryptography;
+using System.Text;
 
 namespace lyroge.framework.Cryptography
 {
@@ -10,7 +10,7 @@ namespace lyroge.framework.Cryptography
     /// 需要提供一个或者一组密钥 但是不同算法的密钥长度不同 常用算法如DES、AES、TripleDES等    
     /// DES 密钥长度为64bit不同算法的密钥长度不同
     /// </summary>
-    public class DES
+    public static class DES
     {
         /// <summary>
         /// DES 加密算法
@@ -23,7 +23,7 @@ namespace lyroge.framework.Cryptography
             byte[] byKey = CheckEncryptKey(encryptkey);            
             byte[] IV = { 0x12, 0x34, 0x56, 0x78, 0x90, 0xAB, 0xCD, 0xEF };
             try
-            {                
+            {
                 DESCryptoServiceProvider des = new DESCryptoServiceProvider();
                 byte[] inputByteArray = Encoding.UTF8.GetBytes(data);
                 MemoryStream ms = new MemoryStream();
@@ -34,9 +34,42 @@ namespace lyroge.framework.Cryptography
                 ms.Close();
                 ms = null;
             }
-            catch { }
+            catch (Exception e)
+            {
+                throw e;
+            }
             return data;
         }
+
+        /// <summary>
+        /// DES 解密算法        
+        /// </summary>
+        /// <param name="data">待解密字符串</param>
+        /// <param name="encryptkey">解密密钥 （必须为64bit）</param>
+        /// <returns></returns>
+        public static string Decrypt(string inputString, string decryptkey)
+        {
+            byte[] byKey = CheckEncryptKey(decryptkey);
+            byte[] IV = { 0x12, 0x34, 0x56, 0x78, 0x90, 0xAB, 0xCD, 0xEF };            
+            try
+            {
+                DESCryptoServiceProvider des = new DESCryptoServiceProvider();
+                byte[] inputByteArray = Convert.FromBase64String(inputString);
+                MemoryStream ms = new MemoryStream();
+                CryptoStream cs = new CryptoStream(ms, des.CreateDecryptor(byKey, IV), CryptoStreamMode.Write);
+                cs.Write(inputByteArray, 0, inputByteArray.Length);
+                cs.FlushFinalBlock();
+                System.Text.Encoding encoding = new System.Text.UTF8Encoding();
+                inputString = encoding.GetString(ms.ToArray());
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            return inputString;
+        }
+
+        #region private method
 
         /// <summary>
         /// 验证密钥是否合格
@@ -60,30 +93,6 @@ namespace lyroge.framework.Cryptography
             return byKey;
         }
 
-
-        /// <summary>
-        /// DES 解密算法        
-        /// </summary>
-        /// <param name="data">待解密字符串</param>
-        /// <param name="encryptkey">解密密钥 （必须为64bit）</param>
-        /// <returns></returns>
-        public static string Decrypt(string inputString, string decryptkey)
-        {
-            byte[] byKey = CheckEncryptKey(decryptkey);
-            byte[] IV = { 0x12, 0x34, 0x56, 0x78, 0x90, 0xAB, 0xCD, 0xEF };            
-            try
-            {
-                DESCryptoServiceProvider des = new DESCryptoServiceProvider();
-                byte[] inputByteArray = Convert.FromBase64String(inputString);
-                MemoryStream ms = new MemoryStream();
-                CryptoStream cs = new CryptoStream(ms, des.CreateDecryptor(byKey, IV), CryptoStreamMode.Write);
-                cs.Write(inputByteArray, 0, inputByteArray.Length);
-                cs.FlushFinalBlock();
-                System.Text.Encoding encoding = new System.Text.UTF8Encoding();
-                inputString = encoding.GetString(ms.ToArray());
-            }
-            catch { }
-            return inputString;
-        }
+        #endregion
     }
 }

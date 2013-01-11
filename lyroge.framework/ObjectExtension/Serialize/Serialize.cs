@@ -14,13 +14,25 @@ namespace lyroge.framework.ObjectExtension.Serialize
         /// <returns></returns>
         public static byte[] Serialize(this object obj)
         {
-            obj.IfNull(() => { throw new ArgumentNullException("序列化的对象不能为空"); });
+            if (obj == null)
+            { 
+                throw new ArgumentNullException("序列化的对象不能为空"); 
+            }
             using (MemoryStream stream = new MemoryStream())
             {
                 new BinaryFormatter().Serialize(stream, obj);
                 return stream.ToArray();
             }
-                             
+        }
+
+        /// <summary>
+        /// 反序列化对象
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public static object Deserialze(this byte[] data)
+        {
+            return Deserialze<object>(data);
         }
 
         /// <summary>

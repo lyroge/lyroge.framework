@@ -25,7 +25,7 @@ namespace lyroge.framework.Cryptography
 		/// <summary>
 		/// 使用MD5加密字符串
 		/// </summary>
-		/// <param name="data">要加密的字符串</param>
+		/// <param name="data">要加密的字符串，以utf8字符编码</param>
 		/// <returns>返回加密后的字符</returns>
         public static string EncryptString(string data)
 		{

@@ -1,8 +1,8 @@
 ﻿using System.Data;
 using System.Data.Common;
 
-namespace lyroge.framework.DbHelper.Interfaces
-{    
+namespace lyroge.framework.DbHelper
+{
     public interface IDbHelper 
     {
         /// <summary>
@@ -31,6 +31,7 @@ namespace lyroge.framework.DbHelper.Interfaces
         /// <returns></returns>
         IDataReader GetDataReader(string commandText, params DbParameter[] dbParameters);
         IDataReader GetDataReader(DbCommand dbCommand);
+
         /// <summary>
         /// 判断是否查询到数据
         /// </summary>
@@ -39,6 +40,7 @@ namespace lyroge.framework.DbHelper.Interfaces
         /// <returns></returns>
         bool IsExists(string commandText, params DbParameter[] dbParameters);
         bool IsExists(DbCommand dbCommand);
+
         /// <summary>
         /// 返回执行SQL语句影响的条数
         /// </summary>
@@ -54,7 +56,7 @@ namespace lyroge.framework.DbHelper.Interfaces
         /// <param name="commandText"></param>
         /// <param name="dbParameters"></param>
         /// <returns></returns>
-        object ExecuteScalar(string commandText, params DbParameter[] dbParameters);
-        object ExecuteScalar(DbCommand dbCommand);
+        T ExecuteScalar<T>(string commandText, params DbParameter[] dbParameters) where T : struct;
+        T ExecuteScalar<T>(DbCommand dbCommand) where T : struct;
     }
 }

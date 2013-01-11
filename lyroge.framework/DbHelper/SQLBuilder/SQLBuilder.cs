@@ -195,7 +195,7 @@ namespace lyroge.framework.DbHelper
 
                 //查询SQL名称列表
                 var names = query.Select(builder => builder.Name).ToArray();
-                var conn = new DbHelper.SqlDbUtil("");
+                var conn = new DbHelper.SqlHelper("");
 
                 if (string.IsNullOrEmpty(_connectionkey) == true)
                 {
@@ -204,7 +204,7 @@ namespace lyroge.framework.DbHelper
 
                 if (string.IsNullOrEmpty(_connectionkey) == false)
                 {
-                    conn = new DbHelper.SqlDbUtil(_connectionkey);
+                    conn = new DbHelper.SqlHelper(_connectionkey);
                 }
 
                 try
