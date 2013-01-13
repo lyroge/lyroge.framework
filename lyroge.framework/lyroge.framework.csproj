@@ -52,6 +52,10 @@
     <Compile Include="DbHelper\SQLBuilder\SQLBuilder.cs" />
     <Compile Include="DbHelper\SqlHelper.cs" />
     <Compile Include="Http\MyWebClient.cs" />
+    <Compile Include="Image\GifImageHandler.cs" />
+    <Compile Include="Image\IImageHandler.cs" />
+    <Compile Include="Image\ImageHandlerBase.cs" />
+    <Compile Include="Image\RawFormatJudge.cs" />
     <Compile Include="LinqExtension\Linq.cs" />
     <Compile Include="ObjectExtension\ObjectExtension.cs" />
     <Compile Include="ObjectExtension\Serialize\Serialize.cs" />
