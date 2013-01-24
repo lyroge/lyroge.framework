@@ -57,10 +57,14 @@
     <Compile Include="Image\ImageHandlerBase.cs" />
     <Compile Include="Image\RawFormatJudge.cs" />
     <Compile Include="LinqExtension\Linq.cs" />
+    <Compile Include="Mail\Mail.cs" />
     <Compile Include="ObjectExtension\ObjectExtension.cs" />
     <Compile Include="ObjectExtension\Serialize\Serialize.cs" />
     <Compile Include="ObjectExtension\StringValidate\StringValidate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Web\CheckCode.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="IO\" />
