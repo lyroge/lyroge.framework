@@ -13,13 +13,13 @@ namespace lyroge.framework.Common
         //是否为邮件格式
         public static bool IsEmail(string source)
         {
-            return Regex.IsMatch(source, REG_IS_EMAIL, RegexOptions.IgnoreCase);
+            return IsMatch(source, REG_IS_EMAIL);
         }
 
         //文本中是否与邮件字符串
         public static bool HasEmail(string source)
         {
-            return Regex.IsMatch(source, REG_CONTAIN_EMAIL, RegexOptions.IgnoreCase);
+            return IsMatch(source, REG_CONTAIN_EMAIL);
         }
 
         #endregion
@@ -31,12 +31,7 @@ namespace lyroge.framework.Common
 
         public static bool IsUrl(string source)
         {
-            return Regex.IsMatch(source, REG_IS_URL, RegexOptions.IgnoreCase);
-        }
-
-        public static bool HasUrl(string source)
-        {
-            return Regex.IsMatch(source, REG_CONTAIN_URL, RegexOptions.IgnoreCase);
+            return IsMatch(source, REG_IS_URL);
         }
         #endregion
 
@@ -54,23 +49,14 @@ namespace lyroge.framework.Common
         #region 验证手机号
         public static bool IsMobile(string source)
         {
-            return Regex.IsMatch(source, @"^1[35]\d{9}$", RegexOptions.IgnoreCase);
-        }
-        public static bool HasMobile(string source)
-        {
-            return Regex.IsMatch(source, @"1[35]\d{9}", RegexOptions.IgnoreCase);
+            return IsMatch(source, @"^1[35]\d{9}$");
         }
         #endregion
 
         #region 验证IP
-        public static bool IsIP(string source)
+        public static bool IsIP(string text)
         {
-            return Regex.IsMatch(source, @"^(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])$", RegexOptions.IgnoreCase);
-        }
-
-        public static bool HasIP(string source)
-        {
-            return Regex.IsMatch(source, @"(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])",RegexOptions.IgnoreCase);
+            return IsMatch(text, @"^(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])$");
         }
         #endregion
 
@@ -78,9 +64,9 @@ namespace lyroge.framework.Common
         //// <summary>
         /// 是不是中国电话，格式010-85849685
         /// </summary>
-        public static bool IsTel(string source)
+        public static bool IsTelephone(string source)
         {
-            return Regex.IsMatch(source, @"^\d{3,4}-?\d{6,8}$", RegexOptions.IgnoreCase);
+            return IsMatch(source, @"^\d{3,4}-?\d{6,8}$");
         }
         #endregion
 
@@ -88,32 +74,32 @@ namespace lyroge.framework.Common
         //// <summary>
         /// 邮政编码 6个数字
         /// </summary>
-        public static bool IsPostCode(string source)
+        public static bool IsPostCode(string text)
         {
-            return Regex.IsMatch(source, @"^\d{6}$", RegexOptions.IgnoreCase);
+            return IsMatch(text, @"^\d{6}$");
         }
         #endregion
 
-        #region 中文
-        public static bool IsChinese(string source)
+        #region 是否中文
+        const string REG_CHINESE = @"^[\u4e00-\u9fa5]+$";
+        public static bool IsChinese(string text)
         {
-            return Regex.IsMatch(source, @"^[\u4e00-\u9fa5]+$", RegexOptions.IgnoreCase);
-        }
-        public static bool hasChinese(string source)
-        {
-            return Regex.IsMatch(source, @"[\u4e00-\u9fa5]+", RegexOptions.IgnoreCase);
+            return IsMatch(text, REG_CHINESE);
         }
         #endregion
 
+        #region private method
         /// <summary>
-        /// 是否为数字、字符、下划线组合
+        /// 判断字符串是否匹配给定正则
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="text"></param>
+        /// <param name="regex"></param>
+        /// <param name="options"></param>
         /// <returns></returns>
-        public static bool IsNormalChar(string source)
+        private static bool IsMatch(string text, string regex, RegexOptions options = RegexOptions.IgnoreCase)
         {
-            return Regex.IsMatch(source, @"[\w\d_]+", RegexOptions.IgnoreCase);
+            return Regex.IsMatch(text, regex, options);
         }
-
+        #endregion
     }
 }
