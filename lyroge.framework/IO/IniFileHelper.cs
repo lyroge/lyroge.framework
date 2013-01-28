@@ -4,7 +4,7 @@ using System.Text;
 
 namespace lyroge.framework.IO
 {
-    class IniFileHelper
+    public class IniFileHelper
     {
 		private string _filePath;
 

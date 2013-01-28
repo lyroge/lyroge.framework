@@ -11,9 +11,9 @@ namespace lyroge.framework.Common
         const string REG_CONTAIN_EMAIL = @"[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})";
 
         //是否为邮件格式
-        public static bool IsEmail(string source)
+        public static bool IsEmail(string text)
         {
-            return IsMatch(source, REG_IS_EMAIL);
+            return IsMatch(text, REG_IS_EMAIL);
         }
 
         //文本中是否与邮件字符串
@@ -29,9 +29,9 @@ namespace lyroge.framework.Common
         const string REG_IS_URL = @"^(((file|gopher|news|nntp|telnet|http|ftp|https|ftps|sftp)://)|(www\.))+(([a-zA-Z0-9\._-]+\.[a-zA-Z]{2,6})|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(/[a-zA-Z0-9\&amp;%_\./-~-]*)?$";
         const string REG_CONTAIN_URL = @"(((file|gopher|news|nntp|telnet|http|ftp|https|ftps|sftp)://)|(www\.))+(([a-zA-Z0-9\._-]+\.[a-zA-Z]{2,6})|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(/[a-zA-Z0-9\&amp;%_\./-~-]*)?";
 
-        public static bool IsUrl(string source)
+        public static bool IsUrl(string text)
         {
-            return IsMatch(source, REG_IS_URL);
+            return IsMatch(text, REG_IS_URL);
         }
         #endregion
 
@@ -39,17 +39,17 @@ namespace lyroge.framework.Common
         /// <summary>
         /// 验证日期类型
         /// </summary>
-        public static bool IsDateTime(string source)
+        public static bool IsDateTime(string text)
         {
             DateTime dt;
-            return DateTime.TryParse(source, out dt);
+            return DateTime.TryParse(text, out dt);
         }
         #endregion
 
         #region 验证手机号
-        public static bool IsMobile(string source)
+        public static bool IsMobile(string text)
         {
-            return IsMatch(source, @"^1[35]\d{9}$");
+            return IsMatch(text, @"^1[35]\d{9}$");
         }
         #endregion
 
