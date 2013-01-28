@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lyroge.framework", "lyroge.framework\lyroge.framework.csproj", "{1D36085D-1908-493C-99E4-386203162718}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lyroge.framework.Test", "lyroge.framework.Test\lyroge.framework.Test.csproj", "{FA23CE62-2B57-478C-B8B6-31E099F6B10E}"
@@ -13,6 +13,28 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lyroge.framework.snapcodes", "lyroge.framework.snapcodes\lyroge.framework.snapcodes.csproj", "{68623B86-DA0D-4273-B5CD-7237552CB1C4}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "lyroge.framework.web.test", "http://localhost:8624", "{7EA8B933-35D4-4A94-8F67-BD1680BD13CA}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_8624"
+		Debug.AspNetCompiler.PhysicalPath = "lyroge.framework.web.test\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_8624\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_8624"
+		Release.AspNetCompiler.PhysicalPath = "lyroge.framework.web.test\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_8624\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "lyroge.framework.web.test\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
@@ -57,6 +79,16 @@ Global
 		{68623B86-DA0D-4273-B5CD-7237552CB1C4}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{68623B86-DA0D-4273-B5CD-7237552CB1C4}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{68623B86-DA0D-4273-B5CD-7237552CB1C4}.Release|x86.ActiveCfg = Release|Any CPU
+		{7EA8B933-35D4-4A94-8F67-BD1680BD13CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EA8B933-35D4-4A94-8F67-BD1680BD13CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EA8B933-35D4-4A94-8F67-BD1680BD13CA}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{7EA8B933-35D4-4A94-8F67-BD1680BD13CA}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{7EA8B933-35D4-4A94-8F67-BD1680BD13CA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7EA8B933-35D4-4A94-8F67-BD1680BD13CA}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EA8B933-35D4-4A94-8F67-BD1680BD13CA}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{7EA8B933-35D4-4A94-8F67-BD1680BD13CA}.Release|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{7EA8B933-35D4-4A94-8F67-BD1680BD13CA}.Release|Mixed Platforms.Build.0 = Debug|Any CPU
+		{7EA8B933-35D4-4A94-8F67-BD1680BD13CA}.Release|x86.ActiveCfg = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

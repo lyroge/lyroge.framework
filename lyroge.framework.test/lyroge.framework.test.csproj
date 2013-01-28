@@ -54,7 +54,8 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CryptographyTest.cs" />
+    <Compile Include="Common\ValidatorTest.cs" />
+    <Compile Include="Cryptography\CryptographyTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
