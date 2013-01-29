@@ -32,7 +32,10 @@ namespace lyroge.framework.DateTimeHelper
             return datetime.ToString(_formatArray[(int)(format)]);
         }
 
-
+        #region 日期格式字符串
+        /// <summary>
+        /// 日期格式字符串数组
+        /// </summary>
         private static string[] _formatArray = new string[] 
         {
             "yyyy-MM-dd",
@@ -51,8 +54,12 @@ namespace lyroge.framework.DateTimeHelper
             "yyyy年M月d日 H时m分",
             "yyyy年M月d日 H时m分s秒",
         };
+        #endregion
     }
 
+    /// <summary>
+    /// 日期格式枚举
+    /// </summary>
     public enum DateTimeFormat
     {
         yyyyMMdd24,
