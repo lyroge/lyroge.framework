@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace lyroge.framework.DateTimeHelper
+namespace lyroge.framework.DateTimeX
 {
     public static class DateTimeHelper
     {
@@ -27,7 +27,7 @@ namespace lyroge.framework.DateTimeHelper
         /// </summary>
         /// <param name="datetime"></param>
         /// <returns></returns>
-        public static string Format(DateTime datetime, DateTimeFormat format)
+        public static string Format(System.DateTime datetime, DateTimeFormat format)
         {           
             return datetime.ToString(_formatArray[(int)(format)]);
         }

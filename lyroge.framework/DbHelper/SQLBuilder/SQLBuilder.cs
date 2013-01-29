@@ -14,8 +14,8 @@ namespace lyroge.framework.DbHelper
     public class SQLBuilder
     {
         public string HashKey { get; set; }
-        public SQLBuilder(string name, StringBuilder sql) : this(name, sql, DateTime.MinValue) { }
-        public SQLBuilder(string name, StringBuilder sql, DateTime expire)
+        public SQLBuilder(string name, StringBuilder sql) : this(name, sql, System.DateTime.MinValue) { }
+        public SQLBuilder(string name, StringBuilder sql, System.DateTime expire)
         {
             this.Name = name;
             this.SQL = sql;
@@ -43,7 +43,7 @@ namespace lyroge.framework.DbHelper
         /// <summary>
         /// 过期时间
         /// </summary>
-        public DateTime ExpireTime { get; private set; }
+        public System.DateTime ExpireTime { get; private set; }
         public DataTable Table { get; private set; }
         /// <summary>
         /// 刷新缓存

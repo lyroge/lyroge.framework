@@ -47,7 +47,7 @@
     <Compile Include="Common\Validator.cs" />
     <Compile Include="Cryptography\SymmetricAlgorithm\DES.cs" />
     <Compile Include="Cryptography\HashAlgorithm\MD5.cs" />
-    <Compile Include="DateTimeHelper\DateTimeHelper.cs" />
+    <Compile Include="DateTime\DateTimeHelper.cs" />
     <Compile Include="DbHelper\DbHelper.cs" />
     <Compile Include="DbHelper\IDbHelper\IDbHelper.cs" />
     <Compile Include="DbHelper\OleHelpUtil.cs" />
