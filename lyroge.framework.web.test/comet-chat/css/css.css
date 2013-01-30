@@ -1,0 +1,13 @@
+﻿body { font-size: 13px; }
+#chatarea { width: 800px; border: solid 1px gray; height: 300px; margin-bottom: 10px; overflow-y: auto; padding: 4px; }
+textarea { width: 800px; height: 60px; margin-top: 8px; }
+h2, h3, h4, h5 { margin: 0px; }
+input[type=button] { height: 40px; vertical-align: bottom; width: 80px; }
+.waiting_tip { font-size: 110%; }
+i { font-size: 18px; }
+.have_tip { display: none; }
+.tip { background-color: gray; padding: 4px; margin-bottom: 10px; color: white; height: 21px; }
+.datetime { color: gray; }
+.username { padding-right: 20px; }
+.message_content { color: blue; padding-left: 10px; }
+.message_record { margin-bottom: 8px; }
