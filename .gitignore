@@ -4,3 +4,6 @@ TestResults
 
 !/lyroge.framework.web.test/bin/
 !/lyroge.framework.snapcodes/bin/
+
+*.testsettings
+*.vsmdi
