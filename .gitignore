@@ -1,3 +1,6 @@
 bin
 obj
 TestResults
+
+!lyroge.framework.web.test/bin/*.dll
+!lyroge.framework.snapcodes/bin/*.dll
