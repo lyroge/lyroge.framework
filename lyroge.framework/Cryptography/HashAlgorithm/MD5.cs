@@ -46,6 +46,12 @@ namespace lyroge.framework.Cryptography
             bytes.ToList().ForEach(b=> sb.Append(b.ToString("X2")));
 			return sb.ToString();
 		}
+
+
+        public static string WebFormsAuthentication(string data)
+        {
+            return System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(data, "MD5");
+        }
 	}
 
 }

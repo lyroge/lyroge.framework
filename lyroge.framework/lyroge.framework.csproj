@@ -58,6 +58,7 @@
     <Compile Include="Image\IImageHandler.cs" />
     <Compile Include="Image\ImageHandlerBase.cs" />
     <Compile Include="Image\RawFormatJudge.cs" />
+    <Compile Include="IO\FileHelper.cs" />
     <Compile Include="IO\IniFileHelper.cs" />
     <Compile Include="LinqExtension\Linq.cs" />
     <Compile Include="Mail\Mail.cs" />
